@@ -1,0 +1,111 @@
+:root {
+  --blue-dark: #003366;
+  --blue: #044b8a;
+  --blue-light: #4a90e2;
+  --accent: #ffc72c;
+  --bg: #f5f7fa;
+  --text: #1a1a1a;
+  --card-bg: #ffffff;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 900px;
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--blue);
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  letter-spacing: 1px;
+}
+
+/* Dice Area */
+/* Held state for dice */
+.die.held {
+  border: 3px solid var(--accent);
+  border-radius: var(--radius);
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* Dice Area */
+.dice-section {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.dice-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  background-color: #003366;
+}
+
+.die {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.die:hover {
+  transform: scale(1.08);
+}
+
+.roll-btn {
+  background: var(--blue);
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  font-weight: 600;
+}
+
+.roll-btn:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .die {
+    width: 55px;
+    height: 55px;
+  }
+
+  .roll-btn {
+    width: 100%;
+  }
+
+  .score-card {
+    flex-direction: column;
+  }
+}
